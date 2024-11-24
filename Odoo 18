@@ -1,1 +1,49 @@
+1. Preparar el Sistema
+# sudo apt update && sudo apt upgrade -y
+
+2. Instala las dependencias necesarias:
+# sudo apt install python3-pip build-essential wget libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-dev libjpeg-dev libpq-dev -y
+
+2. PostgreSQL
+# sudo apt install postgresql -y
+# su - postgres
+$ createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo18_youtube
+
+3. Configura un entorno virtual para Python:
+# virtualenv -p python3.10 virt_odoo15
+
+4. Descargar Odoo 18
+# git clone https://github.com/odoo/odoo --branch 18.0 --single-branch /opt/odoo
+
+5.- Instala las dependencias de Odoo:
+pip3 install -r requirements.txt
+
+
+6.- Configurar Odoo
+
+run.conf
+[options]
+addons_path = /home/ubuntu22/odoo/18/odoo/addons,
+db_host = localhost
+db_port = 5434
+db_user = odoo18
+db_password = odoo18
+admin_passwd = adm1n
+http_port = 8069
+max_cron_threads = 2
+limit_time_real = 1200
+limit_time_cpu = 1200
+limit_memory_soft = 600000000000
+limit_memory_hard = 700000000000
+limit_memory_request = 100000000000
+limit_request = 10000000
+proxy_mode = False
+log_level = info
+
+
+
+8.- Conéctate a la Interfaz Web
+localhost:8069
+
+
 
