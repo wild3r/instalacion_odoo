@@ -10,14 +10,14 @@
 $ createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo18_youtube
 
 3. Configura un entorno virtual para Python:
-# virtualenv -p python3.10 virt_odoo15
+# virtualenv -p python3.10 virt_odoo18
 
 4. Descargar Odoo 18
-# git clone https://github.com/odoo/odoo --branch 18.0 --single-branch /opt/odoo
+# git clone https://github.com/odoo/odoo.git --branch=18.0 --depth=1
 
 5.- Instala las dependencias de Odoo:
 pip3 install -r requirements.txt
-
+python setup.py install
 
 6.- Configurar Odoo
 
@@ -39,7 +39,6 @@ limit_memory_request = 100000000000
 limit_request = 10000000
 proxy_mode = False
 log_level = info
-
 
 
 8.- Conéctate a la Interfaz Web
