@@ -1,0 +1,13 @@
+1.- install unoconv
+sudo apt-get install unoconv
+
+2.- instalar con pip en el virtual
+pip3 install py3o.template
+
+3.- modificar unoconv
+This fixed the same problem for me:
+Edit the first line of /usr/bin/unoconv to replace:
+#!/usr/bin/env python3
+with
+#!/usr/bin/python3
+
