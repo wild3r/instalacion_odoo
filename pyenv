@@ -11,14 +11,20 @@ Paso 2: instalar dependencias (esto sí con sudo)
 Paso 3: instalar pyenv (AHORA SÍ, como usuario normal)
 - curl https://pyenv.run | bash
 Paso 4: activar pyenv en tu shell(ejecutar todo en la terminal)
+
+nano ~/.bashrc
+Ve al FINAL del archivo y pega exactamente esto:
 _________________________________________
+# PYENV CONFIG
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 _________________________________________
 Guarda y recarga:
+source ~/.bashrc
 pyenv --version
+
 3. Instalar Python 3.10.12 con tu usuario norm
 - pyenv install 3.10.12
 - pyenv versions
